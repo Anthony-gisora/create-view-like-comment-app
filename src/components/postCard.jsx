@@ -24,7 +24,7 @@ const PostCard = ({handleComment}) => {
                 <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sint odit. Nobis, reprehenderit iste repellat expedita molestias libero culpa. Excepturi?</p>
             </div>
             <div className="h-[13%]  w-full flex items-center justify-around px-1 border-t border-t-[#8c8c8c70]">
-                <button className='rounded bg-[#808080] w-[30%] ' onClick={() =>{ handleLike() }}> { likes !==0 && `${likes}` + ' '} { like ?  <ThumbUpAltIcon className='text-[#166cff]' /> : <ThumbUpOffAltIcon  className='text-[#ffffff]'/>} </button>
+                <button className='rounded bg-[#808080] w-[30%] ' onClick={() =>{ handleLike() }}> { likes !==0 && `${likes} `} { like ?  <ThumbUpAltIcon className='text-[#166cff]' /> : <ThumbUpOffAltIcon  className='text-[#ffffff]'/>} </button>
                 <button className='rounded bg-[#808080] w-[30%] ' onClick={()=>{handleComment()}} > <TextsmsOutlinedIcon className='text-[#ffffff]' /> </button>
             </div>
             
