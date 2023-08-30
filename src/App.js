@@ -11,13 +11,14 @@ function App () {
     setComment( !comment )
   }
 
-  const [ currentComme, setCurrentComment ] = useState()
+  const [ currentComment, setCurrentComment ] = useState()
 
   const [ comments, setComments ] = useState( [ {} ] )
 
   const handleComments = (event) => {
     event.preventDefault()
-    setComments([...comments, {message: comment}])
+    setComments( [ ...comments, { message: currentComment } ] )
+    
   }
   
 
