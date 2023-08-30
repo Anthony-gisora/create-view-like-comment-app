@@ -44,7 +44,8 @@ function App () {
         </div>
       </div>
       <div className='w-full overflow-auto relative h-full'>
-        <PostCard handleComment={ handleComment } pComments= {comments.length - 1}  />
+        <PostCard handleComment={ handleComment } pComments={ comments.length - 1 } />
+        
         { comment &&
           <>
           <div className=' fixed top-0 left-0 bg-[#000000f2] w-[100vw] h-[100vh] z-[10] scroll-none ' onClick={()=>{handleComment()}}></div>
