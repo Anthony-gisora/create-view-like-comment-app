@@ -13,11 +13,23 @@ function App () {
 
   const [ currentComment, setCurrentComment ] = useState()
 
+
   const [ comments, setComments ] = useState( [ {} ] )
+
+  let commentss = comments !== '' ? 0 : comments.length
 
   const handleComments = (event) => {
     event.preventDefault()
-    setComments( [ ...comments, { message: currentComment } ] )
+    const d = new Date();
+    let hour = d.getHours();
+    let min = d.getMinutes();
+    var ampm = hour >= 12 ? 'pm' : 'am';
+
+
+    let timeStamp = `${hour} ` + `:` + ` ${min}` + ` ${ampm}`
+    setComments( [ ...comments, { message: currentComment, time: timeStamp } ] )
+    console.log( comments )
+    console.log(commentss)
     
   }
   
@@ -32,7 +44,7 @@ function App () {
         </div>
       </div>
       <div className='w-full overflow-auto relative h-full'>
-        <PostCard handleComment={ handleComment } />
+        <PostCard handleComment={ handleComment }  />
         <PostCard handleComment={ handleComment } />
         <PostCard handleComment={ handleComment } />
         <PostCard handleComment={ handleComment } />
@@ -44,9 +56,9 @@ function App () {
                 <h3 className='text-[20px] font-bold' >Comment</h3>
                 <button onClick={()=>{handleComment()}}> <CloseIcon /> </button>
               </div>
-              <form className='h-full bg-[#999999] w-full p-2 flex flex-col items-center justify-evenly'>
+              <form onSubmit={(event)=> handleComments(event)} className='h-full bg-[#999999] w-full p-2 flex flex-col items-center justify-evenly'>
                 <textarea cols="38" rows="7" className='p-2 focus:outline-none resize-none' onChange={(e)=> setCurrentComment(e.target.value)} />
-                <button type='submit' className='bg-[#2fa82f] active:bg-[#42ff2f] w-20' onSubmit={(event)=> handleComments(event)}>Send</button>
+                <button type='submit' className='bg-[#2fa82f] active:bg-[#42ff2f] w-20' >Send</button>
               </form>
             </div>
           </>
