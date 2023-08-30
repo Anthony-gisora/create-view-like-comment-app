@@ -21,7 +21,7 @@ const PostCard = ({handleComment, pComments}) => {
                 </div>
             </div>
             <div className="h-[72%] w-full flex items-center justify-center px-1">
-                <p className='text-center'>This is a temporal post text.</p>
+                <p className='text-center'>This is a temporal post text. Looking forward to add the <em className='font-bold'> add and posts section</em> on the top. But for any recommendation(Maoni yoyote) feel free to share on <em className='font-bold'>whatsApp 0796899444</em> </p>
             </div>
             <div className="h-[13%]  w-full flex items-center justify-around px-1 border-t border-t-[#8c8c8c70]">
                 <button className='rounded bg-[#808080] w-[30%] ' onClick={() =>{ handleLike() }}> { likes !==0 && `${likes} `} { like ?  <ThumbUpAltIcon className='text-[#166cff]' /> : <ThumbUpOffAltIcon  className='text-[#ffffff]'/>} </button>
